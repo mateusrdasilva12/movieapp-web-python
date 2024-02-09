@@ -10,3 +10,4 @@ Moreover, this example was initially set up to run using Replit.com
 >> poetry install
 
 >> poetry run python main.py
+Mateus Rodrigues da Silva - 744939
