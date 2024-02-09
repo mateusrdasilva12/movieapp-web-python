@@ -18,4 +18,19 @@ class UserDao:
     # Close the cursor and connection
     cursor.close()
     conn.close()
+  
+  def add(self, user):
+    conn = Database.get_connection()
+    cursor = conn.cursor()
+    new_user = (
+        user.name,
+        user.password
+    )
+    cursor.execute("INSERT INTO user (name, password) VALUES (?, ?);", new_user)
+
+
+    # Close the cursor and connection
+    cursor.close()
+    conn.close()
+    
     return user
