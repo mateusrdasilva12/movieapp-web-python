@@ -43,3 +43,19 @@ class MovieDao:
     # Close the cursor and connection
     cursor.close()
     conn.close()
+
+  def update(self, movie):
+    conn = Database.get_connection()
+    cursor = conn.cursor()
+    filme_atualizado = (
+          movie.nome,
+          movie.ano,
+          movie.id  # Supondo que o objeto 'movie' tenha um atributo 'id'
+    )
+    cursor.execute("UPDATE filme SET nome=?, ano=? WHERE id=?;", filme_atualizado)
+    
+    # Commit the changes to the database
+    conn.commit()
+    # Close the cursor and connection
+    cursor.close()
+    conn.close()
